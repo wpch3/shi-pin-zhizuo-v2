@@ -171,7 +171,7 @@ def draw_status_bar(overlay: Image.Image, spec: dict):
 def draw_choice_boxes(overlay: Image.Image, boxes_spec: list[dict]):
     draw = ImageDraw.Draw(overlay)
     stroke = int(round(3.8 * SS))
-    font = load_font(44)
+    font = load_font(39)
     for item in boxes_spec:
         x1, y1, x2, y2 = [v * SS for v in item["box"]]
         # Slight hand-drawn organic tilt polygon (1-2px hand-inked paper feel)
@@ -285,13 +285,17 @@ PAGES = [
         # Page 1: 童年回忆 · 青暮暖灯 · 幼态小团子 (1440 x 2580)
         "raw": "raw-01.png",
         "out": "page-01.png",
-        "status_bar": {"mode": "full_100", "cx": 760, "text_y": 215},
+        "status_bar": {"mode": "full_100", "cx": 760, "text_y": 230},
         "pov_boxes": [
             {
-                "x": 720,
-                "y1": 38,
-                "lines": ["那时候她刚来家里不久，话很少，总喜欢抓着我的袖子不放"],
-                "font_size": 34,
+                "x": 745,
+                "y1": 28,
+                "lines": [
+                    "我记得小时候我妹妹总是喜欢抓着我的袖子不放，",
+                    "好像我随时会消失一样。",
+                ],
+                "font_size": 31,
+                "pad_y": 17,
                 "align_box": "center",
             },
         ],
@@ -345,16 +349,18 @@ PAGES = [
         "pov_boxes": [
             {
                 "x": 28,
-                "y1": 1358,
+                "y1": 1352,
                 "lines": ["等等……小满，我刚才以为只是普通文书，", "你怎么把自己的名字也签上去了？"],
                 "font_size": 29,
+                "pad_y": 17,
                 "align_box": "left",
             },
             {
                 "x": 28,
-                "y1": 1528,
-                "lines": ["还有，你这亲情度怎么突然掉成 0 了？"],
-                "font_size": 30,
+                "y1": 1506,
+                "lines": ["连手印都直接按上去了……", "你可是我妹妹啊！"],
+                "font_size": 29,
+                "pad_y": 17,
                 "align_box": "left",
             },
         ],
@@ -400,24 +406,29 @@ PAGES = [
         ],
         "pov_boxes": [
             {
-                "x": 1070,
+                "x": 1065,
                 "y1": 1648,
-                "lines": ["左边是刚变成零的亲情度，", "右边是眼泪快掉下来的退婚书……"],
-                "font_size": 29,
+                "lines": ["左边是抱紧婚书不松手的妹妹，", "右边是眼泪快掉下来的退婚书……"],
+                "font_size": 28,
+                "pad_x": 28,
+                "pad_y": 15,
                 "align_box": "center",
             },
             {
-                "x": 1070,
-                "y1": 1802,
+                "x": 1065,
+                "y1": 1776,
                 "lines": ["这印章，到底该往哪边盖？"],
-                "font_size": 31,
+                "font_size": 29,
+                "pad_x": 28,
+                "pad_y": 14,
                 "align_box": "center",
             },
         ],
         "choices": [
-            {"box": (758, 1922, 1384, 2088), "label": "1. 盖章婚书"},
-            {"box": (758, 2132, 1384, 2298), "label": "2. 撕掉退婚书"},
-            {"box": (758, 2342, 1384, 2508), "label": "3. 两份全盖"},
+            {"box": (744, 1872, 1386, 2002), "label": "1. 盖章婚书"},
+            {"box": (744, 2028, 1386, 2158), "label": "2. 撕掉退婚书"},
+            {"box": (744, 2184, 1386, 2314), "label": "3. 两份全盖"},
+            {"box": (744, 2340, 1386, 2470), "label": "4. 你们两个都是我的翅膀"},
         ],
     },
 ]
@@ -490,6 +501,8 @@ def render_page(spec: dict) -> Path:
             y1=pbox["y1"],
             lines=pbox["lines"],
             font_size=pbox["font_size"],
+            pad_x=pbox.get("pad_x", 32),
+            pad_y=pbox.get("pad_y", 19),
             align_box=pbox["align_box"],
         )
 
