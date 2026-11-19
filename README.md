@@ -25,14 +25,13 @@
   - `deliverables/v2-chapter-02-vertical/陪妹妹出门约会_第二话_9x16竖屏视频版.pdf`
 - 剧情：不新增角色，用一句误认把「妹妹」称呼轻轻推松，男主两问两答各自独立成框，末句留第三话钩子。
 
-### 3. `v3 · lv1` 全面重制版：《被拒绝的 NTR 老师 · 我画的女生，从来不看我》（制作推进中）
-- **针对原代理版本的核心修复**：100% 拉回 `v2` 素描铅笔线稿＋哑光平涂赛璐璐画风（剔除水彩脏渍与西洋厚涂油画断层页）、全程严守男主第一人称 POV、统一 `1440×1920` 手绘外框与安全边距、补齐“礼貌拒绝”戏剧闭环。
+### 3. `v3 · lv1` 完整第一话：《被拒绝的 NTR 老师》
+- **故事**：漫画作者被柚子的美貌吸引并试图告白；在咖啡店撞见她与男主交往后，柚子明确拒绝。结尾保留作者无法控制笔下角色、读者沉默的惩罚，不转向救赎或说教。
 - **角色定稿立绘与设定卡**：`art/v3-lv1/ref-yuzu.png`、`deliverables/v3-lv1/character-card-yuzu.png`
-- **重制版全话剧本与分镜（封面 + P1–P9，共 10 页）**：`docs/v3_lv1_重制剧本与分镜.md`
-- **已完成前半程原画与双版本成页（封面 + P1–P5）**：
-  - `deliverables/v3-lv1/page-00-cover.png`、`page-01.png` ～ `page-05.png`（3:4 阅读版）
-  - `deliverables/v3-lv1-vertical/page-00-cover.png`、`page-01.png` ～ `page-05.png`（9:16 视频直导版）
-  - 注：受单轮 10 张生图上限限制，P3 左侧发夹镜像修正与后半程 `raw-06`～`raw-09`（含合集 PDF）紧接着下一轮生成补齐。
+- **原画与排版脚本**：`art/v3-lv1/full-cover.png`、`full-01.png`～`full-09.png`；由 `scripts/build_v3_lv1_full_draft.py` 构建。
+- **完整成页（封面 + P1–P9，共 10 页）**：
+  - `deliverables/v3-lv1-full-draft/`：3:4 阅读版 PNG 与 PDF `被拒绝的NTR老师_第一话_试作.pdf`
+  - `deliverables/v3-lv1-full-draft-vertical/`：9:16 竖屏版 PNG 与 PDF `被拒绝的NTR老师_第一话_9x16试作.pdf`
 
 ### 4. `v3` 古风四页重制版：《婚书截胡篇》（四幕光影递进 + 幼年小满重塑 + 古风实景）
 - **无字原画归档**：`art/v3-chapter-01/raw-01.png` ～ `raw-04.png`
